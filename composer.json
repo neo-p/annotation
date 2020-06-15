@@ -1,0 +1,25 @@
+{
+    "name": "neo-p/annotation",
+    "description": "annotation",
+    "minimum-stability": "dev",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "6xiaowu9",
+            "email": "736518585@qq.com"
+        }
+    ],
+    "require": {
+        "doctrine/annotations": "^1.8.1",
+        "php-di/phpdoc-reader": "^2.1",
+        "symfony/finder": "^5.0",
+        "neo-p/framework": "^0.0.1",
+        "neo-p/log": "^0.0.1",
+        "neo-p/di": "^0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "NeoP\\Annotation": "src/"
+        }
+    }
+}
