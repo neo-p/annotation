@@ -3,6 +3,7 @@
 namespace NeoP\Annotation\Scaner;
 
 use NeoP\Stdlib\Composer;
+use NeoP\Application;
 use NeoP\Component\ComponentInterface;
 use NeoP\Component\ComponentRegister;
 use NeoP\Annotation\AnnotationRegister;
@@ -37,7 +38,7 @@ class Scaner
             throw new AnnotationException("service config is not a array.");
         }
 
-        $this->scanning = array_merge($this->scanning, [$self]);
+        $this->scanning = array_merge($this->scanning, [$self, Application::$service]);
     }
 
     public function run() 
@@ -105,13 +106,13 @@ class Scaner
         foreach ($this->scanning as $scanning) {
             $scanPath = $scanning;
             if (strpos($scanning, '/') !== 0) {
-                $scanPath =  $root . $scanning;
+                $scanPath =  $root . '/' . $scanning;
             }
-            if( strpos($path, $scanPath) !== 0 ) {
-                return true;
+            if( strpos($path, $scanPath) === 0 ) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     private function getScanComponent(string $namespace)
