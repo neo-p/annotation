@@ -8,9 +8,9 @@
         "doctrine/annotations": "^1.8.1",
         "php-di/phpdoc-reader": "^2.1",
         "symfony/finder": "^5.0",
-        "neo-p/framework": "^0.0.1",
-        "neo-p/log": "^0.0.1",
-        "neo-p/di": "^0.0.1"
+        "neo-p/framework": "^1.0.0",
+        "neo-p/log": "^1.0.0",
+        "neo-p/di": "^1.0.0"
     },
     "autoload": {
         "psr-4": {
